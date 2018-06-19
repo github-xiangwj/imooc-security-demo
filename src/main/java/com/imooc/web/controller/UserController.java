@@ -1,4 +1,4 @@
-package com.imooc.controller;
+package com.imooc.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
