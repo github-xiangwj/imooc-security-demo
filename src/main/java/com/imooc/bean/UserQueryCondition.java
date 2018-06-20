@@ -1,13 +1,18 @@
 package com.imooc.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class UserQueryCondition {
 	
+	@ApiModelProperty(value="用户名")
 	private String username;
 
+	@ApiModelProperty(value="用户年龄起始值")
 	private int age;
 	
 	private int ageTo;
 
+	@ApiModelProperty(value="用户年龄结束值")
 	public String getUsername() {
 		return username;
 	}

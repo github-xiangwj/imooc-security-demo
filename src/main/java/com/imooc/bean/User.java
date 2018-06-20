@@ -9,6 +9,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.imooc.validator.UserNameConstraint;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class User {
 	
 	//标注ListView视图不返回password字段
@@ -23,6 +25,7 @@ public class User {
 
 	@JsonView(BaseView.class)
 	@UserNameConstraint(message = "这是一个测试")
+	@ApiModelProperty(value="用户名")
 	private String username;
 	
 	@JsonView(BaseView.class)

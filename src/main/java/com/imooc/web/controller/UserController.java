@@ -23,6 +23,10 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.imooc.bean.User;
 import com.imooc.bean.User.BaseView;
 import com.imooc.bean.User.DetailView;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 import com.imooc.bean.UserQueryCondition;
 
 @RestController
@@ -62,6 +66,7 @@ public class UserController {
 	
 	@GetMapping
 	@JsonView(BaseView.class)
+	@ApiOperation(value="查询服务")
 	public List<User> query(UserQueryCondition condition, @PageableDefault(page=1, size=10, sort="age,desc") Pageable pageable){
 		System.out.println(ReflectionToStringBuilder.toString(condition, ToStringStyle.MULTI_LINE_STYLE));
 		System.out.println(pageable.getPageNumber());
@@ -83,7 +88,7 @@ public class UserController {
 	
 	@GetMapping("/{id:\\d+}")
 	@JsonView(DetailView.class)
-	public User getInfo(@PathVariable String id){
+	public User getInfo(@ApiParam(value="用户id") @PathVariable String id){
 		System.out.println("id:"+id);
 		User u1 = new User();
 		u1.setUsername("u1");
