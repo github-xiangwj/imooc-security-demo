@@ -9,6 +9,13 @@
   	<version>1.0.0-SNAPSHOT</version>
   </parent>
   
+  <properties>                                                                                                
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>                                  
+     <spring.version>4.1.4.RELEASE</spring.version>                                                      
+     <hibernate.version>4.3.8.Final</hibernate.version>                                                  
+     <jackson.version>2.5.0</jackson.version>                                                            
+  </properties>  
+
   <dependencies>
   	<dependency>
   		<groupId>com.imooc.security</groupId>
@@ -62,6 +69,12 @@
 		    <artifactId>spring-boot-maven-plugin</artifactId>
 		    <configuration>
 			<mainClass>com.emall.DemoApplication</mainClass>
+		    </configuration>
+		</plugin>
+		<plugin>
+		    <artifactId>maven-war-plugin</artifactId>
+		    <configuration>
+			<version>2.5</version>
 		    </configuration>
 		</plugin>
   	</plugins>
