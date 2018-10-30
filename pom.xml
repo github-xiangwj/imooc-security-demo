@@ -67,4 +67,20 @@
   	<finalName>demo</finalName>
   </build>
   
+  <!--定义snapshots库和releases库的nexus地址-->
+  <distributionManagement>
+      <repository>
+          <id>nexus-releases</id>
+          <url>
+              http://127.0.0.1:8081/nexus/content/repositories/releases/
+          </url>
+      </repository>
+      <snapshotRepository>
+          <id>nexus-snapshots</id>
+          <url>
+              http://127.0.0.1:8081/nexus/content/repositories/snapshots/
+          </url>
+      </snapshotRepository>
+  </distributionManagement>
+
 </project>
