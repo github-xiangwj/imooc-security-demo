@@ -1,18 +1,21 @@
-package com.imooc;
+package com.emall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RestController;
-
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-@RestController
-@EnableSwagger2
-public class DemoApplication {
+@ServletComponentScan
+public class DemoApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	    return application.sources(DemoApplication.class);
+	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+	    SpringApplication.run(DemoApplication.class, args);
 	}
-
 }
