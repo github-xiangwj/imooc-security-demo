@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>imooc-security-demo</artifactId>
-  <name>imooc-security-demo</name>
+  <artifactId>emall</artifactId>
+  <name>emall</name>
   <packaging>war</packaging>
   <parent>
-  	<groupId>com.imooc.security</groupId>
-  	<artifactId>imooc-security</artifactId>
+  	<groupId>com.platform.security</groupId>
+  	<artifactId>platform-security</artifactId>
   	<version>1.0.0-SNAPSHOT</version>
   </parent>
   
@@ -18,8 +18,8 @@
 
   <dependencies>
   	<dependency>
-  		<groupId>com.imooc.security</groupId>
-  		<artifactId>imooc-security-browser</artifactId>
+  		<groupId>com.platform.security</groupId>
+  		<artifactId>platform-security-browser</artifactId>
   		<version>1.0.0-SNAPSHOT</version>
   	</dependency>
     <dependency>
@@ -48,6 +48,11 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-contract-wiremock</artifactId>
       </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+      </dependency>
   </dependencies>
   
   <build>
@@ -65,24 +70,25 @@
   			</executions>
   		</plugin>
   		<plugin>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-maven-plugin</artifactId>
-		    <configuration>
-			<mainClass>com.emall.DemoApplication</mainClass>
-		    </configuration>
-		</plugin>
-		<plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-war-plugin</artifactId>
-		    <version>2.6</version>
-		    <configuration>
-			<failOnMissingWebXml>false</failOnMissingWebXml>
-		    </configuration>
-		</plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>com.emall.DemoApplication</mainClass>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
   	</plugins>
-  	<finalName>demo</finalName>
+  	<finalName>emall</finalName>
   </build>
   
+
   <!--定义snapshots库和releases库的nexus地址-->
   <distributionManagement>
       <repository>
